@@ -66,5 +66,59 @@ const displayCategoryDetails = (category_name, categoryDetails) => {
     `;
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
+    categoryDetails.forEach(category => {
+        console.log(category);
+        const newsDiv = document.createElement('div');
+        newsDiv.classList.add('card', 'my-3');
+        newsDiv.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="${category.image_url}" class="img-fluid rounded-start p-2" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body mt-2">
+                    <div>
+                        <h5 class="card-title">${category.title}</h5>
+                        <p class="card-text">${category.details.slice(0, 250)}...</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex m-2">
+                            <div class="mx-2">
+                                <img src="${category.author.img}" class="rounded-circle" style="width: 50px; height: 50px;" alt="Author Image">
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <h6>${category.author.name}</h6>
+                                <small>${category.author.published_date ? category.author.published_date.split(' ')[0] : ''}</small>
+                            </div>
+                        </div>
+                        <div>
+                            <span><i class="far fa-eye"></i></span> ${category.total_view}
+                        </div>
+                        <div>
+                            <span>${generateStarRating(category.rating.number)}</span>
+                        </div>
+                        <div>
+                            <a onclick="loadNewsDetails('${category._id}')" href="#"><span><i class="fas fa-arrow-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        newsContainer.appendChild(newsDiv);
+        function generateStarRating(ratingNumber) {
+            // Calculate the number of full stars and half stars
+            const fullStars = Math.floor(ratingNumber);
+            const hasHalfStar = ratingNumber % 1 !== 0;
+            // Generate full star icons
+            const filledStars = '<i class="fas fa-star text-warning"></i>'.repeat(fullStars);
+            // Generate half star icon
+            const halfStar = hasHalfStar ? '<i class="fas fa-star-half-alt text-warning"></i>' : '';
+            // Generate unfilled stars for the remaining space
+            const unfilledStars = '<i class="far fa-star"></i>'.repeat(5 - fullStars - (hasHalfStar ? 1 : 0));
+
+            return filledStars + halfStar + unfilledStars;
+        }
+    })
 }
 loadCategories();
