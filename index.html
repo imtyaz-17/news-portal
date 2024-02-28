@@ -36,7 +36,7 @@
                         <form class="d-flex ">
                             <ul class="navbar-nav me-auto mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link fs-6 fw-semibold text-primary active" aria-current="page"
+                                    <a class="nav-link fs-6 fw-semibold text-danger active" aria-current="page"
                                         href="#">News</a>
                                 </li>
                                 <li class="nav-item">
@@ -64,6 +64,39 @@
             <div id="totalItemFound" class="card shadow-lg fw-semibold border-0 mb-4">
 
             </div>
+            <!-- Sort Part -->
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="d-flex align-items-center">
+                    <span class="fw-bold pe-2">Sort By View:</span>
+                    <div class="dropdown">
+                        <a class="btn btn-light shadow-lg fw-semibold border-0 dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Default
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Today's Post</a></li>
+                            <li><a class="dropdown-item" href="#">Recent Post</a></li>
+                            <li><a class="dropdown-item" href="#">Most Popular Post</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-danger fw-semibold" href="#" role="button">Today's Pick</a>
+                    <a class="btn btn-outline-danger  fw-semibold" href="#" role="button">Trending</a>
+                </div>
+            </div>
+        </section>
+        <!-- spinner -->
+        <section id="spinner" class="d-none container">
+            <div style="height:400px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <!-- News Card Section -->
+        <section id="news-container" class="container mt-4" id="deals">
+            <!-- News cards -->
         </section>
     </main>
     <!-- Bootstrap Script Link -->
