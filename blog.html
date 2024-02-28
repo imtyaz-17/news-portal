@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYTimes24.com</title>
+    <!-- Bootstrap CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Custom Css Link Here  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome Icon Kit Link Here  -->
+    <script src="https://kit.fontawesome.com/7fbdf96c63.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- header section -->
+    <header>
+        <!-- navbar section -->
+        <section class="container">
+            <!-- navbar 01 -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold" href="./index.html"><span
+                            class="btn btn-danger fs-4 fw-bold py-0">NY</span>Times24.com</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-lg-0">
+                        </ul>
+                        <form class="d-flex ">
+                            <ul class="navbar-nav me-auto mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link fs-6 fw-semibold text-danger active" aria-current="page"
+                                        href="./index.html">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fs-6 fw-semibold" aria-current="page" href="./blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a aria-current="page" href="#"><img src="./images/Avatar.png" alt=""></a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <hr>
+        </section>
+    </header>
+    <!-- main section -->
+    <main>
+        <section class="container">
+            <div class="m-2 border border-info p-3">
+                <h1>What is difference between var, let and const in JavaScript?</h1>
+                <p class="mt-4">
+                    A variable declaration is simply telling the computer that a
+                    variable exists and what value it should start with. Similar to
+                    other programming languages JavaScript also allows for the
+                    declaration of variables. There are three keywords in JavaScript
+                    that can be used to declare variables: let, var, and const. Each
+                    keyword has different rules and implications for how the variables
+                    they create can be used.
+                </p>
+                <p>
+                    <span class="fw-bold">let:</span>The let keyword declares a
+                    block-scoped local variable, optionally initializing it to a value.
+                    Block-scoped means that the variable is only available within the
+                    block it was declared in, which is usually denoted by curly braces
+                    {}.
+                </p>
+                <p>
+                    <span class="fw-bold">var:</span>The var keyword declares a
+                    function-scoped or global variable, optionally initializing it to a
+                    value. Function-scoped means that the variable is only available
+                    within the function it was declared in. Global variables are
+                    available throughout your entire code.
+                </p>
+                <p>
+                    <span class="fw-bold">cons:</span>The const keyword declares a
+                    block-scoped, immutable constant variable, i.e. a variable that
+                    can't be reassigned. Constants are also called “immutable
+                    variables”, but that's a bit of a misnomer since they are actually
+                    variables - just ones that can't be reassigned.
+                </p>
+            </div>
+            <div class="m-2 border border-info p-3">
+                <h1>The Difference Between Regular Functions and Arrow Functions</h1>
+                <p>
+                    Arrow functions are a great feature added in ES6. ES6 was released
+                    in the year 2015. According to my own personal experience, I would
+                    prefer to use the arrow function every time I have the chance. This
+                    is due to the fact that the codes that use Arrow functions are clear
+                    and simple to read when compared with regular functions.
+                    Additionally, I am comfortable using the arrow function. When arrow
+                    functions are used in a way regular functions can't be completely
+                    replaced by Arrow functions. In some instances, which require
+                    regular functions. This means that arrows aren't the solution for
+                    all illnesses.
+                </p>
+                <p>
+                    <span class="fw-bolder">1. Syntax </span> The functions we define
+                    with the function keyword are referred to as regular functions.
+                    keyword function keywords are known as regular functions. Regular
+                    functions can be defined by two methods.
+                </p>
+                <p>
+                    <span class="fw-bolder">2. "this" keyword </span> This keyword is
+                    used in regular functions. It depends on the context of execution.
+                    Arrow functions are not like regular functions.
+                </p>
+                <p>
+                    <span class="fw-bolder">3. Using a new keyword </span> Regular
+                    functions that are created with function declarations, expressions,
+                    or both, can be called and constructed. Regular functions can be
+                    constructed; they can also be called with the new keyword. The arrow
+                    functions cannot be called and are not constructible.
+                </p>
+                <p>
+                    <span class="fw-bolder">4. No duplicate named parameters </span>
+                    Arrow functions can never have duplicate named parameters, whether
+                    in strict or non-strict mode. For regular functions, we can use
+                    duplicated named parameters in non-strict modes.
+                </p>
+                <p>
+                    <span class="fw-bolder">5. Arguments binding </span> The Regular
+                    function can use Arguments keywords to access the arguments that
+                    were passed to it.
+                </p>
+            </div>
+            <div class="m-2 border border-info p-3">
+                <h1>.forEach(), .map(), .filter() .... What's the difference?</h1>
+                <p>
+                    <span class="fw-bold">.forEach() </span> Function .forEach() is
+                    another form of just a plain for loop that can be used to iterate
+                    through array items. This case of a function is used for more
+                    complex arrays, for example, an array of objects with a lot of
+                    entries than just an array of integers. This function takes 1
+                    parameter .forEach(callback). The parameter callback can take up to
+                    3 parameters element, index & array (but only the element parameter
+                    is required, the rest is optional).
+                </p>
+                <p>
+                    <span class="fw-bold">.map()</span>Function .map() is a manipulative
+                    function that can modify each element’s content in an array that it
+                    is called on. This function returns a new array with modified
+                    values, the array that it is called on will stay still. This
+                    function is useful for adding a little change to an already existing
+                    array, for example adding a property to an object or modifying it.
+                    Its construction and use are identical to the previous function
+                    .forEach() and both can be used interchangeably.
+                </p>
+                <p>
+                    <span class="fw-bold">.filter() </span> Function .filter() is a
+                    search function that returns all the elements that fulfil the
+                    assigned condition. You can search by simple terms, for example,
+                    that element is equal to a certain integer, or by more advanced
+                    terms, for example, searching for an object with certain property
+                    that is equal to something. Both examples have a very frequent use
+                    as a developer. This function returns an array of found results, if
+                    any, even if only 1 match is found. If a function does not find any
+                    match, it simply returns an empty array.
+                </p>
+                <p>
+                    <span class="fw-bold">.find() </span> Function .find() is also a
+                    search function like the previous but they differ in one small
+                    detail — this function returns only one match in an array. If in an
+                    array is more than one result, the function will return the first
+                    that has matched. Just like the function .forEach(), this function
+                    also takes only 1 parameter .find(callback). The parameter callback
+                    can take up to 3 parameters element, index & array (but only the
+                    element parameter is required, the rest is optional).
+                </p>
+            </div>
+            <div class="m-2 border border-info p-3">
+                <h1>Template strings</h1>
+                <p>
+                    Template strings are supported by almost all browsers that are
+                    regularly maintained today. The only major one that doesn’t support
+                    it right out of the box is Internet Explorer. However, browsers that
+                    do not support it can add it with Babel. Node.js also supports it in
+                    version 4 or later. Template strings are the new standard for
+                    JavaScript strings. It is much better than strings before ES6 in
+                    that it supports interpolating expressions inside strings. We also
+                    have tagged templates which are just functions, with the decomposed
+                    parts of the template string as parameters. The constant string in
+                    the first parameter is the string in a decomposed array form, and
+                    the evaluated versions of the expressions in the order they appeared
+                    in the string are the remaining arguments. Tagged template functions
+                    can return any variable type.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-secondary text-white py-3">
+        <div class="container text-center">
+            <p class="mb-0">Stay Connected</p>
+            <div class="social-icons mt-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mt-3 mb-0">Copyright &copy; 2023 NYTimes24.com</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Script Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- My Script Link -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
