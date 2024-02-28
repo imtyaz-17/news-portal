@@ -66,6 +66,10 @@ const displayCategoryDetails = (category_name, categoryDetails) => {
     `;
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
+
+    // Sort categoryDetails based on total_view
+    categoryDetails.sort((a, b) => b.total_view - a.total_view);
+
     categoryDetails.forEach(category => {
         console.log(category);
         const newsDiv = document.createElement('div');
@@ -157,3 +161,6 @@ const displayNewsDetails = news => {
     `;
 }
 loadCategories();
+// Default
+window.onload = loadCategoryDetails('01', 'Breaking News');
+
