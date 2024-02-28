@@ -87,8 +87,8 @@ const displayCategoryDetails = (category_name, categoryDetails) => {
                                 <img src="${category.author.img}" class="rounded-circle" style="width: 50px; height: 50px;" alt="Author Image">
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                                <h6>${category.author.name}</h6>
-                                <small>${category.author.published_date ? category.author.published_date.split(' ')[0] : ''}</small>
+                                <h6>${category.author.name ? category.author.name : 'No Author Name Found'}</h6>
+                                <small>${category.author.published_date ? category.author.published_date.split(' ')[0] : 'No Published Date Found'}</small>
                             </div>
                         </div>
                         <div>
@@ -98,7 +98,7 @@ const displayCategoryDetails = (category_name, categoryDetails) => {
                             <span>${generateStarRating(category.rating.number)}</span>
                         </div>
                         <div>
-                            <a onclick="loadNewsDetails('${category._id}')" href="#"><span><i class="fas fa-arrow-right"></i></span></a>
+                        <a onclick="loadNewsDetails('${category._id}')" href="#"><span><i class="fa-solid fa-arrow-right" data-bs-toggle="modal" data-bs-target="#newsDetailsModal"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -119,6 +119,41 @@ const displayCategoryDetails = (category_name, categoryDetails) => {
 
             return filledStars + halfStar + unfilledStars;
         }
+
+        //  Hide loader
+        toggleSpinner(false);
     })
+}
+
+const loadNewsDetails = async (newsId) => {
+    try {
+        const apiUrl = `https://openapi.programming-hero.com/api/news/${newsId}`;
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch category details');
+        }
+        const responseData = await response.json();
+        displayNewsDetails(responseData.data[0]);
+    } catch (error) {
+        console.error('Error loading category details:', error);
+    }
+}
+const displayNewsDetails = news => {
+    //console.log(news);
+    const modalTitle = document.getElementById('newsDetailsModalLabel');
+    modalTitle.innerText = news.title;
+    const newsDetails = document.getElementById('news-details');
+    newsDetails.innerHTML = `
+    <div class="text-center">
+        <img class="img-thumbnail pb-3" src="${news.thumbnail_url}" alt="News Image">
+        <p class="mb-2"><strong>Author Name:</strong> ${news.author.name ? news.author.name : 'No Author Name Found'}</p>
+        <p class="mb-2"><strong>Published Date:</strong> ${news.author.published_date ? news.author.published_date : 'No Published Date Found'}</p>
+        <p class="mb-2"><strong>Badge:</strong> ${news.rating.badge ? news.rating.badge : 'No Badge Found'}</p>
+        <p class="mb-2"><strong>Rating:</strong> ${news.rating.number ? news.rating.number : 'No Rating Found'}</p>
+        <p class="mb-2"><strong>Total Views:</strong> ${news.total_view ? news.total_view : 'Total View Not Found'}</p>
+        <p>${news.details}</p>
+    </div>
+    `;
 }
 loadCategories();
