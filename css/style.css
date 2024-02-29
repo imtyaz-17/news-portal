@@ -6,3 +6,58 @@ body {
     border-radius: 5px;
     background-color: rgb(252, 97, 97);
 }
+
+/* for mobile responsiveness */
+@media (max-width: 768px) {
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .navbar-toggler {
+        font-size: 0.8rem;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    #categories-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #categories-container li {
+        margin-bottom: 10px;
+    }
+
+    #categories-container a {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+    }
+
+    #sort-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #sort-section>div {
+        margin-bottom: 10px;
+    }
+
+    #sort-section a.btn {
+        margin: 5px;
+    }
+
+    #news-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-dialog {
+        max-width: 90%;
+    }
+
+}
